@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ley de Hubble - Universo en Expansión</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Fondo galaxia */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top, rgba(0,100,255,0.4), transparent 40%),
+    radial-gradient(circle at bottom, rgba(128,0,255,0.4), transparent 40%),
+    url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1920&auto=format&fit=crop');
+    
+    background-size: cover;
+    background-position: center;
+    z-index:-2;
+}
+
+/* Capa oscura */
+
+body::after{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.65);
+    z-index:-1;
+}
+
+/* Partículas estrellas */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size: 50px 50px, 100px 100px;
+    background-position: 0 0, 25px 25px;
+
+    opacity:0.5;
+    animation: moveStars 80s linear infinite;
+}
+
+@keyframes moveStars{
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(-1000px);
+    }
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+/* Título */
+
+.hero{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:#7fd7ff;
+    text-shadow:0 0 20px #00bfff;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.4rem;
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* Tarjetas */
+
+.card{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius:25px;
+    padding:35px;
+    margin-bottom:35px;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 30px rgba(0,191,255,0.6);
+}
+
+.card h2{
+    color:#8fd3ff;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.card p{
+    line-height:1.9;
+    font-size:1.1rem;
+}
+
+/* Fórmula */
+
+.formula{
+    text-align:center;
+    font-size:3rem;
+    color:#ffe082;
+    margin:25px 0;
+    text-shadow:0 0 15px gold;
+}
+
+/* Imagen galaxia */
+
+.galaxy{
+    width:100%;
+    border-radius:20px;
+    margin-top:25px;
+    box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:40px;
+    font-size:1rem;
+    opacity:0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+    <!-- PORTADA -->
+
+    <section class="hero">
+
+        <h1>LEY DE HUBBLE</h1>
+
+        <p>
+            El universo está en constante expansión.
+            Las galaxias se alejan unas de otras mientras
+            el espacio continúa expandiéndose.
+        </p>
+
+    </section>
+
+    <!-- INFORMACIÓN -->
+
+    <section class="card">
+
+        <h2>¿Qué es la Ley de Hubble?</h2>
+
+        <p>
+            La Ley de Hubble fue descubierta por Edwin Hubble en 1929.
+            Esta ley demuestra que las galaxias se alejan unas de otras
+            y que la velocidad con la que lo hacen depende de la distancia.
+        </p>
+
+    </section>
+
+    <!-- FÓRMULA -->
+
+    <section class="card">
+
+        <h2>Fórmula de Hubble</h2>
+
+        <div class="formula">
+            v = H₀ · d
+        </div>
+
+        <p>
+            Donde:
+            <br><br>
+            <b>v</b> = velocidad de alejamiento
+            <br>
+            <b>H₀</b> = constante de Hubble
+            <br>
+            <b>d</b> = distancia de la galaxia
+        </p>
+
+    </section>
+
+    <!-- BIG BANG -->
+
+    <section class="card">
+
+        <h2>Relación con el Big Bang</h2>
+
+        <p>
+            Gracias a esta ley se pudo entender que el universo
+            tuvo un origen común conocido como Big Bang.
+            Si las galaxias hoy se separan, significa que
+            en el pasado estuvieron mucho más juntas.
+        </p>
+
+        <img class="galaxy"
+        src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1600&auto=format&fit=crop">
+
+    </section>
+
+    <!-- IMPORTANCIA -->
+
+    <section class="card">
+
+        <h2>Importancia</h2>
+
+        <p>
+            La Ley de Hubble revolucionó la astronomía moderna
+            y permitió comprender que el universo no es estático,
+            sino dinámico y cambiante.
+        </p>
+
+    </section>
+
+</div>
+
+<footer>
+    Página creada sobre la expansión del universo y la Ley de Hubble 🌌
+</footer>
+
+</body>
+</html>
